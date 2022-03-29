@@ -29,25 +29,37 @@ const getTitleInformation = async title => {
   console.log(info)
 })()
 
-//takes a show/movie title as parameter and pushes title to local storage array
-function saveToFavorites(title){
-  var favorites = this.getFromFavorites;
 
-  favorites.push(title);
+//handling favorites via local storage
 
+var favorites = [];
+
+
+function saveToFavorites(){
   localStorage.setItem('favorites', JSON.stringify(favorites));
 }
 
+function renderFavorites() {
 
-//checks local storage for existing "favorites" and returns array
-function getFromFavorites(){
-  var favorites;
-  
-  if(localStorage.getItem('favorites' === null)){
-      favorites = [];
+  var ul = document.createElement("ul");
+
+  for (var i = 0; i < favorites.length; i++) {
+    var title = favorites[i];
+
+    var li = document.createElement("li");
+    li.textContent = "placeholder";
+    li.setAttribute("data-index", i);
+    ul.appendChild(li);
   }
-  else{
-      favorites = JSON.parse(localStorage.getIem('favorites'));
-  }
-  return favorites;
 }
+
+funciton init(){
+  var savedFavorites = JSON.parse(localStorage.getItem("favorites"));
+
+  if (savedFavorites !== null){
+    favorites = savedFavorites;
+  }
+  renderFavorites();
+}
+
+init();

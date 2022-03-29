@@ -28,3 +28,26 @@ const getTitleInformation = async title => {
   const info = await getTitleInformation('The Shawshank Redemption')
   console.log(info)
 })()
+
+//takes a show/movie title as parameter and pushes title to local storage array
+function saveToFavorites(title){
+  var favorites = this.getFromFavorites;
+
+  favorites.push(title);
+
+  localStorage.setItem('favorites', JSON.stringify(favorites));
+}
+
+
+//checks local storage for existing "favorites" and returns array
+function getFromFavorites(){
+  var favorites;
+  
+  if(localStorage.getItem('favorites' === null)){
+      favorites = [];
+  }
+  else{
+      favorites = JSON.parse(localStorage.getIem('favorites'));
+  }
+  return favorites;
+}

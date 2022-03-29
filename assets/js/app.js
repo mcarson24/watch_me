@@ -10,8 +10,7 @@ const getTitleInformation = async title => {
   // IMDb API 'SeachTitle' endpoint
   let response = await fetch(`https://imdb-api.com/en/API/SearchTitle/k_vd8o64bn/${title.trim()}`)
   let data = await response.json()
-  displaySearchResults(data)
-
+  
   // No data is found matching query
   if (!data.results.length) {
     console.log('No matches found')
@@ -19,10 +18,7 @@ const getTitleInformation = async title => {
     // TODO: Display message on page. 'No matches found with that title.'
   }
 
-  // Response returns an array of content. The user will select which movie/show they
-  //  want; we will use that to make the next API call to watchMode.
-  // Temporarily will use the first item returned.
-  const selected = data.results[0] 
+  displaySearchResults(data)
 }
 
 const displaySearchResults = data => {

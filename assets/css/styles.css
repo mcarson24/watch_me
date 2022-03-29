@@ -1,3 +1,7 @@
 body {
   background-color: turquoise;
 }
+
+#search-results {
+  top: 65px;
+}

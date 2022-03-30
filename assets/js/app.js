@@ -40,6 +40,20 @@ function renderFavorites() {
   }
 }
 
+const reduceSources = () => {
+  let sources = []
+  let sourceNames = [] 
+
+  titleInfo.sources.map(source => {
+    if (!sourceNames.includes(source.name)) {
+      sourceNames.push(source.name)
+      sources.push(source)
+    }
+  })
+
+  titleInfo.sources = sources
+}
+
 const displaySearchResults = data => {
   searchResults.classList.remove('hidden')
   searchResults.innerHTML = ''
@@ -58,6 +72,7 @@ const displaySearchResults = data => {
     // WatchMode Title Details Endpoint
     response = await fetch(`https://api.watchmode.com/v1/title/${e.target.dataset.imdb_id}/details/?apiKey=oW3y8drDCyPOFpr3qmP4s0cWvaBFPPJ9x8SxXi5n&append_to_response=sources`)
     titleInfo = await response.json()
+    reduceSources()
     
     // Remove search results
     resetSearchResults()

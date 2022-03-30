@@ -2,6 +2,7 @@ const searchForm = document.querySelector('#search')
 const searchResults = document.querySelector('#search-results')
 
 let titleInfo
+var favorites = [];
 
 // TODO: GET Info on TV Show or Movie from IMDB API
 
@@ -19,6 +20,24 @@ const getTitleInformation = async title => {
   }
 
   displaySearchResults(data)
+}
+
+function saveToFavorites(){
+  localStorage.setItem('favorites', JSON.stringify(favorites));
+}
+
+function renderFavorites() {
+
+  var ul = document.createElement("ul");
+
+  for (var i = 0; i < favorites.length; i++) {
+    var title = favorites[i];
+
+    var li = document.createElement("li");
+    li.textContent = "placeholder";
+    li.setAttribute("data-index", i);
+    ul.appendChild(li);
+  }
 }
 
 const displaySearchResults = data => {
@@ -55,3 +74,14 @@ searchForm.addEventListener('submit', e => {
 
   getTitleInformation(e.target.children[0].value)
 })
+
+funciton init(){
+  var savedFavorites = JSON.parse(localStorage.getItem("favorites"));
+
+  if (savedFavorites !== null){
+    favorites = savedFavorites;
+  }
+  renderFavorites();
+}
+
+init();

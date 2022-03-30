@@ -1,5 +1,7 @@
 const searchForm = document.querySelector('#search')
 const searchResults = document.querySelector('#search-results')
+var favoritesList = document.querySelector("#displayFavorites")
+var favoriteBtn = document.querySelector("#favorite-btn")
 
 let titleInfo
 var favorites = [];
@@ -28,17 +30,22 @@ function saveToFavorites(){
 
 function renderFavorites() {
 
-  var ul = document.createElement("ul");
-
   for (var i = 0; i < favorites.length; i++) {
     var title = favorites[i];
-
     var li = document.createElement("li");
-    li.textContent = "placeholder";
-    li.setAttribute("data-index", i);
-    ul.appendChild(li);
+    li.textContent = title;
+    favoritesList.appendChild(li);
   }
+
 }
+
+favoriteBtn.addEventListener("click", function(event){
+  var test = document.createElement("li");
+  test.textContent = "TESTING";
+  favoritesList.appendChild(test);
+})
+
+
 
 const reduceSources = () => {
   let sources = []
@@ -86,7 +93,6 @@ const resetSearchResults = () => {
 
 searchForm.addEventListener('submit', e => {
   e.preventDefault()
-
   getTitleInformation(e.target.children[0].value)
 })
 
@@ -96,8 +102,10 @@ function init(){
   if (savedFavorites !== null){
     favorites = savedFavorites;
   }
+  
   renderFavorites();
 }
+
 
 
 init();

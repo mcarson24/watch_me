@@ -21,7 +21,7 @@ function renderFavorites() {
   }
 }
 
-funciton init(){
+function init(){
   var savedFavorites = JSON.parse(localStorage.getItem("favorites"));
 
   if (savedFavorites !== null){

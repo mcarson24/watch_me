@@ -75,7 +75,7 @@ searchForm.addEventListener('submit', e => {
   getTitleInformation(e.target.children[0].value)
 })
 
-funciton init(){
+function init(){
   var savedFavorites = JSON.parse(localStorage.getItem("favorites"));
 
   if (savedFavorites !== null){

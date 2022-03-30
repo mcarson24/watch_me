@@ -84,4 +84,5 @@ function init(){
   renderFavorites();
 }
 
+
 init();

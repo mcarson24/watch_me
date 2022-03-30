@@ -2,6 +2,7 @@ const searchForm = document.querySelector('#search')
 const searchResults = document.querySelector('#search-results')
 var favoritesList = document.querySelector("#displayFavorites")
 var favoriteBtn = document.querySelector("#favorite-btn")
+var titleSpan = document.querySelector("#title-text");
 
 let titleInfo
 var favorites = [];
@@ -30,6 +31,7 @@ function saveToFavorites(){
 
 function renderFavorites() {
 
+  favoritesList.innerHTML = "";
   for (var i = 0; i < favorites.length; i++) {
     var title = favorites[i];
     var li = document.createElement("li");
@@ -39,10 +41,17 @@ function renderFavorites() {
 
 }
 
-favoriteBtn.addEventListener("click", function(event){
-  var test = document.createElement("li");
-  test.textContent = "TESTING";
-  favoritesList.appendChild(test);
+favoriteBtn.addEventListener("click", function(){
+  var titleText = titleSpan.textContent.trim();
+
+  if(titleText === ""){
+    return;
+  }
+
+  favorites.push(titleText);
+  saveToFavorites();
+  renderFavorites();
+
 })
 
 

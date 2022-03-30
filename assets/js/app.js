@@ -56,9 +56,10 @@ favoriteBtn.addEventListener("click", function(){
   favorites.push(titleText);
   saveToFavorites();
   renderFavorites();
-}
+})
 
-  favoritesList.addEventListener("click", function(event) {
+
+favoritesList.addEventListener("click", function(event) {
     var element = event.target;
     
     if (element.matches("button") === true) {
@@ -68,7 +69,8 @@ favoriteBtn.addEventListener("click", function(){
       saveToFavorites();
       renderFavorites();
     }
-  })
+})
+
   
 
 

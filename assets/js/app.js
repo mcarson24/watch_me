@@ -35,7 +35,13 @@ function renderFavorites() {
   for (var i = 0; i < favorites.length; i++) {
     var title = favorites[i];
     var li = document.createElement("li");
+    li.setAttribute("data-index", i);
     li.textContent = title;
+
+    var button = document.createElement("button");
+    button.textContent = "Remove";
+    button.classList = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded ml-50";
+    li.appendChild(button);
     favoritesList.appendChild(li);
   }
 
@@ -47,12 +53,25 @@ favoriteBtn.addEventListener("click", function(){
   if(titleText === ""){
     return;
   }
-
   favorites.push(titleText);
   saveToFavorites();
   renderFavorites();
+}
 
-})
+  favoritesList.addEventListener("click", function(event) {
+    var element = event.target;
+    
+    if (element.matches("button") === true) {
+      var index = element.parentElement.getAttribute("data-index");
+      favorites.splice(index, 1);
+      
+      saveToFavorites();
+      renderFavorites();
+    }
+  })
+  
+
+
 
 
 

@@ -1,5 +1,8 @@
 const searchForm = document.querySelector('#search')
 const searchResults = document.querySelector('#search-results')
+var favoritesList = document.querySelector("#displayFavorites")
+var favoriteBtn = document.querySelector("#favorite-btn")
+var titleSpan = document.querySelector("#title-text");
 
 let titleInfo
 var favorites = [];
@@ -28,16 +31,64 @@ function saveToFavorites(){
 
 function renderFavorites() {
 
-  var ul = document.createElement("ul");
-
+  favoritesList.innerHTML = "";
   for (var i = 0; i < favorites.length; i++) {
     var title = favorites[i];
-
     var li = document.createElement("li");
-    li.textContent = "placeholder";
     li.setAttribute("data-index", i);
-    ul.appendChild(li);
+    li.textContent = title;
+
+    var button = document.createElement("button");
+    button.textContent = "Remove";
+    button.classList = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded ml-50";
+    li.appendChild(button);
+    favoritesList.appendChild(li);
   }
+
+}
+
+favoriteBtn.addEventListener("click", function(){
+  var titleText = titleSpan.textContent.trim();
+
+  if(titleText === ""){
+    return;
+  }
+  favorites.push(titleText);
+  saveToFavorites();
+  renderFavorites();
+})
+
+
+favoritesList.addEventListener("click", function(event) {
+    var element = event.target;
+    
+    if (element.matches("button") === true) {
+      var index = element.parentElement.getAttribute("data-index");
+      favorites.splice(index, 1);
+      
+      saveToFavorites();
+      renderFavorites();
+    }
+})
+
+  
+
+
+
+
+
+const reduceSources = () => {
+  let sources = []
+  let sourceNames = [] 
+
+  titleInfo.sources.map(source => {
+    if (!sourceNames.includes(source.name)) {
+      sourceNames.push(source.name)
+      sources.push(source)
+    }
+  })
+
+  titleInfo.sources = sources
 }
 
 const displaySearchResults = data => {
@@ -58,6 +109,7 @@ const displaySearchResults = data => {
     // WatchMode Title Details Endpoint
     response = await fetch(`https://api.watchmode.com/v1/title/${e.target.dataset.imdb_id}/details/?apiKey=oW3y8drDCyPOFpr3qmP4s0cWvaBFPPJ9x8SxXi5n&append_to_response=sources`)
     titleInfo = await response.json()
+    reduceSources()
     
     // Remove search results
     resetSearchResults()
@@ -71,7 +123,6 @@ const resetSearchResults = () => {
 
 searchForm.addEventListener('submit', e => {
   e.preventDefault()
-
   getTitleInformation(e.target.children[0].value)
 })
 
@@ -81,7 +132,10 @@ function init(){
   if (savedFavorites !== null){
     favorites = savedFavorites;
   }
+  
   renderFavorites();
 }
+
+
 
 init();

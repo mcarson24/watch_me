@@ -90,6 +90,10 @@ footer {
   justify-content: center;
 }
 
+#displayFavorites{
+	float: right;
+}
+
 /**End of footer style */
 
 @media all and (min-width: 960px) {

@@ -92,6 +92,7 @@ footer {
 
 #displayFavorites{
 	float: right;
+	margin-top: 150px;
 }
 
 /**End of footer style */

@@ -35,7 +35,6 @@
 }
 
 #monitorscreen {
-	position: relative;
   background-color: #777;
 	background-size: cover; 
 	background-position: top center;
@@ -45,16 +44,26 @@
 	overflow: hidden;
 }
 
+div > #monitorscreen > img {
+	justify-content: end;
+
+}
+
+.grid {
+	display: none;
+}
+
+
 .footer-distributed{
 	box-sizing: border-box;
 	width: 100%;
 	font: bold 16px sans-serif;
 	text-align: center;
-	padding: 5px 60px 40px;
+	padding: 4px 60px 40px;
 	overflow: hidden;
 }
 
-/** Footer styles */
+/*! Footer styles */
 
 .footer-distributed h3{
 

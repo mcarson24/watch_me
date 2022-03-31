@@ -8,6 +8,8 @@
   <title>Watch Me</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./assets/css/styles.css">
+
+
 </head>
 
 
@@ -17,6 +19,33 @@
 <body class="bg-neutral-400">
 
   <nav class="text-center">
+
+
+    
+
+    <nav>
+
+      <label for="touch"><span>WatchMe</span></label>
+      <input type="checkbox" id="touch">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      
+
+      <ul class="slide">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Raitings</a></li>
+        <li><a href="#">Contacts</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+
+    </nav>
+
+    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+    <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+    <feBlend in="SourceGraphic" in2="goo" />
+    </filter>
+    </svg>
+
     Movies, Shows, Streaming Platforms, etc.
   </nav>
 
@@ -38,15 +67,14 @@
 
 
         <div class="pic-ctn">
-          <img src="./images/ef4b93ef8f7157de3f97ae1ff5d21b56_0526bb98-1f4a-4da5-b928-b0025f5e6371_500x749.jpg.webp" alt="" class="pic">
+          <img src="./images/ef4b93ef8f7157de3f97ae1ff5d21b56_0526bb98-1f4a-4da5-b928-b0025f5e6371_500x749.jpg.webp"
+            alt="" class="pic">
 
-          <img src="./images/1a7b27e981cb1bbf80bac6a99aa06e48_091dd88c-6bcb-48d4-b2ce-b1f0a1de37da_480x.progressive.jpg.webp" alt="" class="pic">
           <img
-            src="./images/Jurassic_World_poster.jpeg"
+            src="./images/1a7b27e981cb1bbf80bac6a99aa06e48_091dd88c-6bcb-48d4-b2ce-b1f0a1de37da_480x.progressive.jpg.webp"
             alt="" class="pic">
-          <img
-            src="./images/the-batman-poster-2021-1 Small Small.jpeg"
-            alt="" class="pic">
+          <img src="./images/Jurassic_World_poster.jpeg" alt="" class="pic">
+          <img src="./images/the-batman-poster-2021-1 Small Small.jpeg" alt="" class="pic">
           <img
             src="./images/f8a4910b59f3602bd5953b34d8bc67a7_e4e0bf69-2dbd-46d7-a050-65fb4cb570be_480x.progressive.jpg.webp"
             alt="" class="pic">

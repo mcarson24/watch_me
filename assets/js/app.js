@@ -7,7 +7,7 @@ var titleSpan = document.querySelector("#title");
 let titleInfo
 var favorites = [];
 
-// TODO: GET Info on TV Show or Movie from IMDB API
+const watchModeKey = '9CXzPOxljYCpAhYv6DZM68hUPQ9ThHrdANojKj9w'
 
 const getTitleInformation = async title => {
   if (!title) return
@@ -111,7 +111,7 @@ const displaySearchResults = data => {
     if (!e.target.matches('li')) return
 
     // WatchMode Title Details Endpoint
-    response = await fetch(`https://api.watchmode.com/v1/title/${e.target.dataset.imdb_id}/details/?apiKey=oW3y8drDCyPOFpr3qmP4s0cWvaBFPPJ9x8SxXi5n&append_to_response=sources`)
+    response = await fetch(`https://api.watchmode.com/v1/title/${e.target.dataset.imdb_id}/details/?apiKey=${watchModeKey}&append_to_response=sources`)
     titleInfo = await response.json()
     reduceSources()
     

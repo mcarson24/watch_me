@@ -2,7 +2,7 @@ const searchForm = document.querySelector('#search')
 const searchResults = document.querySelector('#search-results')
 var favoritesList = document.querySelector("#displayFavorites")
 var favoriteBtn = document.querySelector("#favorite-btn")
-var titleSpan = document.querySelector("#title-text");
+var titleSpan = document.querySelector("#title");
 
 let titleInfo
 var favorites = [];

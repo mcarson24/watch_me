@@ -63,7 +63,7 @@ div > #monitorscreen > img {
 	overflow: hidden;
 }
 
-/*! Footer styles */
+/* Footer styles */
 
 .footer-distributed h3{
 
@@ -88,6 +88,11 @@ div > #monitorscreen > img {
 footer {
   display: flex;
   justify-content: center;
+}
+
+#displayFavorites{
+	float: right;
+	margin-top: 150px;
 }
 
 /**End of footer style */

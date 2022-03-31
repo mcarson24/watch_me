@@ -90,10 +90,26 @@ footer {
   justify-content: center;
 }
 
-#displayFavorites{
+
+
+#listDiv{
 	float: right;
-	margin-top: 150px;
+	position: relative;
+	top: 220px;
 }
+
+#favoritesHead{
+	position: absolute;
+	right: 50px;
+	font-size: 24px;
+	text-decoration: underline;
+}
+
+
+
+
+
+
 
 /**End of footer style */
 

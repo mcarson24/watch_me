@@ -37,7 +37,6 @@ function renderFavorites() {
     var li = document.createElement("li");
     li.setAttribute("data-index", i);
     li.textContent = title;
-
     var button = document.createElement("button");
     button.textContent = "Remove";
     button.classList = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded ml-50";

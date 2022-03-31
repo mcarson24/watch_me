@@ -91,6 +91,10 @@ const reduceSources = () => {
   titleInfo.sources = sources
 }
 
+const updateScreen = () => {
+  document.querySelector('#title').textContent = titleInfo.title
+}
+
 const displaySearchResults = data => {
   searchResults.classList.remove('hidden')
   searchResults.innerHTML = ''
@@ -113,6 +117,7 @@ const displaySearchResults = data => {
     
     // Remove search results
     resetSearchResults()
+    updateScreen()
   })
 }
 

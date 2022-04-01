@@ -6,101 +6,112 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Watch Me</title>
   <link rel="stylesheet" href="./assets/css/styles.css">
+  <!-- Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+  <script src="https://use.fontawesome.com/a7167bee62.js"></script>
 </head>
-<body class="bg-neutral-400">
-  <nav class="text-center">
-    <label for="touch"><span>WatchMe</span></label>
-    <input type="checkbox" id="touch">
-    <ul class="slide">
-      <li><a href="#">About</a></li>
-      <li><a href="#">Ratings</a></li>
-      <li><a href="#">Contacts</a></li>
-      <li><a href="#">FAQ</a></li>
-    </ul>
-  </nav>
-  <section class="flex flex-col items-center relative my-4">
-    <form id="search" class="w-5/6 md:w-3/4 mb-4">
-      <input type="text" class="w-full px-2 py-4 rounded" placeholder="Search by Movie or TV Show">
-    </form>
-    <ul id="search-results" class="hidden w-5/6 md:w-3/4 rounded py-2 absolute z-10 bg-white drop-shadow-md">
-    </ul>
-  </section>
-  <div id="container">
-    <div id="monitor">
-      <div id="monitorscreen">
-        <h2 id="title"></h2>
-        <button id="favorite-btn"
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded mr-50">
-                Favorite
-        </button>
-        <div id="listDiv">
-          <h3 id="favoritesHead">Favorites</h3>
-          <ul id="displayFavorites" class="pt-20">
-          </ul>
-        </div>
-        <div class="pic-ctn">
-          <img src="./images/ef4b93ef8f7157de3f97ae1ff5d21b56_0526bb98-1f4a-4da5-b928-b0025f5e6371_500x749.jpg.webp"
-               alt="" 
-               class="pic"
-               >
-          <img
-               src="./images/1a7b27e981cb1bbf80bac6a99aa06e48_091dd88c-6bcb-48d4-b2ce-b1f0a1de37da_480x.progressive.jpg.webp"
-               alt="" 
-               class="pic"
-               >
-          <img src="./images/Jurassic_World_poster.jpeg" 
-               alt="" 
-               class="pic"
-               >
-          <img src="./images/the-batman-poster-2021-1 Small Small.jpeg" 
-               alt="" 
-               class="pic"
-               >
-          <img src="./images/f8a4910b59f3602bd5953b34d8bc67a7_e4e0bf69-2dbd-46d7-a050-65fb4cb570be_480x.progressive.jpg.webp"
-               alt="" 
-               class="pic"
-               >
-        </div>
-        <div class="flex flex-wrap items-center w-1/2">
-          <a href="https://netflix.com"  class="w-1/3">
-            <img src="./images/netflix.png" alt="Netflix Logo">
-          </a>
-          <a href="https://www.amazon.com/Prime-Video/b?node=2676882011"  class="w-1/3">
-            <img src="./images/amazon-prime-video.png" alt="Amazon=Prime">
-          </a>
-          <a href="https://www.hbomax.com/"  class="w-1/3">
-            <img src="./images/HBO-Max.png" alt="HBO-Max">
-          </a>
-          <a href="https://www.disneyplus.com/welcome/stream-now" class="w-1/3">
-            <img src=" ./images/disney-plus.png" alt="Disney+" >
-          </a>
-          <a href=" https://www.hulu.com/welcome?orig_referrer=https%3A%2F%2Fwww.google.com%2F"  class="w-1/3">
-            <img src="./images/hulu.png" alt="Hulu">
-          </a>
+  <body class="bg-neutral-400">
+    <nav class="text-center">
+      <label for="touch">
+        <span>
+          <h3 id="logo" class="text-white-600 text-center w-full">
+            Watch
+            <span class="text-blue-400">Me</span>
+          </h3>
+        </span>
+      </label>
+      <input type="checkbox" id="touch">
+      <ul class="slide">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Ratings</a></li>
+        <li><a href="#">Contacts</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </nav>
+    <section class="flex flex-col items-center relative my-4">
+      <form id="search" class="w-5/6 md:w-3/4 mb-4">
+        <input type="text" class="w-full px-2 py-4 rounded" placeholder="Search by Movie or TV Show">
+      </form>
+      <ul id="search-results" class="hidden w-5/6 md:w-3/4 rounded py-2 absolute z-10 bg-white drop-shadow-md">
+      </ul>
+    </section>
+    <div id="container">
+      <div id="monitor">
+        <div id="monitorscreen">
+          <h2 id="title"></h2>
+          <button id="favorite-btn"
+                  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded mr-50"
+                  >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="h-4 w-4" style="fill: #FFF;">
+                    <path d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z"/>
+                  </svg>
+          </button>
+          <div id="listDiv">
+            <h3 id="favoritesHead">Favorites</h3>
+            <ul id="displayFavorites" class="pt-20">
+            </ul>
+          </div>
+          <div class="pic-ctn">
+            <!-- <img src="./images/ef4b93ef8f7157de3f97ae1ff5d21b56_0526bb98-1f4a-4da5-b928-b0025f5e6371_500x749.jpg.webp"
+                alt="" 
+                class="pic"
+                >
+            <img
+                src="./images/1a7b27e981cb1bbf80bac6a99aa06e48_091dd88c-6bcb-48d4-b2ce-b1f0a1de37da_480x.progressive.jpg.webp"
+                alt="" 
+                class="pic"
+                >
+            <img src="./images/Jurassic_World_poster.jpeg" 
+                alt="" 
+                class="pic"
+                >
+            <img src="./images/the-batman-poster-2021-1 Small Small.jpeg" 
+                alt="" 
+                class="pic"
+                >
+            <img src="./images/f8a4910b59f3602bd5953b34d8bc67a7_e4e0bf69-2dbd-46d7-a050-65fb4cb570be_480x.progressive.jpg.webp"
+                alt="" 
+                class="pic"
+                > -->
+          </div>
+          <div class="flex flex-wrap items-center w-1/2 h-max">
+            <a href="https://netflix.com"  class="w-1/3">
+              <img src="./images/netflix.png" alt="Netflix Logo">
+            </a>
+            <a href="https://www.amazon.com/Prime-Video/b?node=2676882011"  class="w-1/3">
+              <img src="./images/amazon-prime-video.png" alt="Amazon=Prime">
+            </a>
+            <a href="https://www.hbomax.com/"  class="w-1/3">
+              <img src="./images/HBO-Max.png" alt="HBO-Max">
+            </a>
+            <a href="https://www.disneyplus.com/welcome/stream-now" class="w-1/3">
+              <img src=" ./images/disney-plus.png" alt="Disney+" >
+            </a>
+            <a href=" https://www.hulu.com/welcome?orig_referrer=https%3A%2F%2Fwww.google.com%2F"  class="w-1/3">
+              <img src="./images/hulu.png" alt="Hulu">
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <footer class="footer-distributed bg-stone-700 text-center">
-    <div class="inset-x-0 bottom-0">
-      <h3 class="text-white-600">Watch<span1 class="text-blue-400">Me</span1></h3>
-      <p class="footer-links">
-        <a href="#">Home</a>
-        ·
-        <a href="#">watchMe@email.com</a>
-        .
-        <a href="#">555-555-5555</a>
-      </p>
-      <p class="footer-company-name">WatchMe © 2022</p>
-      <div class="icon">
-        <a href="https://github.com/mcarson24/watch_me">
-          <img src="images/github-icon.png" alt="Github Projects Page">
-        </a>
+    <footer class="footer-distributed bg-stone-700 text-center">
+      <div class="inset-x-0 bottom-0">
+        <h3 class="text-white-600">Watch<span1 class="text-blue-400">Me</span1></h3>
+        <p class="footer-links">
+          <a href="#">Home</a>
+          ·
+          <a href="#">watchMe@email.com</a>
+          .
+          <a href="#">555-555-5555</a>
+        </p>
+        <p class="footer-company-name">WatchMe © 2022</p>
+        <div class="icon">
+          <a href="https://github.com/mcarson24/watch_me">
+            <img src="images/github-icon.png" alt="Github Projects Page">
+          </a>
+        </div>
       </div>
-    </div>
-  </footer>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="./assets/js/app.js"></script>
-</body>
-
+    </footer>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./assets/js/app.js"></script>
+  </body>
 </html>

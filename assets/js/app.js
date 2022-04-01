@@ -225,6 +225,7 @@ const reduceSources = () => {
 const updateScreen = async () => {
   document.querySelector('#title').textContent = titleInfo.title
   document.querySelector('#favorite-btn').classList.remove('hidden')
+  const streamingServices = document.querySelector('#streaming_services')
   const availableServices = ['google_play', 'amazon', 'disney+', 'hulu', 'netflix', 'hbo_max']
   // Remove previous search's steaming services
   const services = document.getElementsByClassName('service')
@@ -241,9 +242,9 @@ const updateScreen = async () => {
       image.classList.remove('hidden')
       image.setAttribute('href', source.web_url)
     }
-    document.querySelector('#message').textContent = ''
   })
-  if(!hasAtLeastOneStreamer) {
+  streamingServices.removeChild(streamingServices.lastElementChild)
+  if (!hasAtLeastOneStreamer) {
     const message = document.createElement('p')    
     message.textContent = `${titleInfo.title} is not currently available on any of the services we support.`
     message.setAttribute('id', 'message')

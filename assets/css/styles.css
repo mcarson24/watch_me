@@ -1,24 +1,23 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-#container {
-  max-width: auto;
-  margin: auto;
+main {
+  width: 85%
 }
 
 #monitor {
 	background: #000; 
 	position: relative;
 	border-top: 3px solid #888; 
-	margin: 5%;
+	margin-bottom: 5%;
+  min-width: 90%;
 	padding: 2% 2% 4% 2%; 
 	border-radius: 10px; 
 	border-bottom-left-radius: 50% 2%; 
 	border-bottom-right-radius: 50% 2%; 
-	transition: margin-right 1s;
+	/* transition: margin-right 1s; */
 }
 
 #monitor:after {
@@ -38,8 +37,7 @@
   background-color: #777;
 	background-size: cover; 
 	background-position: top center;
-	height: 0; 
-	padding-bottom: 56.25%; 
+	height: 500px; 
 	position: relative;
 	overflow: hidden;
 }
@@ -53,6 +51,9 @@ div > #monitorscreen > img {
 	display: none;
 }
 
+#streaming_services > a > img {
+  margin: 0 auto;
+}
 
 .footer-distributed{
 	box-sizing: border-box;
@@ -65,8 +66,8 @@ div > #monitorscreen > img {
 
 /* Footer styles */
 
-.footer-distributed h3{
-
+.footer-distributed h3,
+#logo {
 	font: normal 36px 'Roboto', cursive;
 	margin: 0 0 10px;
 }
@@ -79,7 +80,6 @@ div > #monitorscreen > img {
 }
 
 .footer-distributed .footer-company-name{
-	color:  #8f9296;
 	font-size: 14px;
 	font-weight: normal;
 	margin: 0;
@@ -90,53 +90,47 @@ footer {
   justify-content: center;
 }
 
-
-
-#listDiv{
-	float: right;
-	position: relative;
-	top: 220px;
+#favorite-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }
 
 #favoritesHead{
-	position: absolute;
-	right: 50px;
 	font-size: 24px;
-	text-decoration: underline;
 }
 
+#displayFavorites li:hover {
+  cursor: pointer;
+}
 
+section {
+  max-width: 1000px;
+  transition: all 200ms;
+}
 
+#monitor {
+  -webkit-animation: tvflicker .2s infinite alternate; 
+  -moz-animation:    tvflicker .5s infinite alternate; 
+  -o-animation:      tvflicker .5s infinite alternate; 
+  animation:         tvflicker .5s infinite alternate; 
+}
 
-
-
-
-/**End of footer style */
-
-@media all and (min-width: 960px) {
-	#monitor {
-		-webkit-animation: tvflicker .2s infinite alternate; 
-		-moz-animation:    tvflicker .5s infinite alternate; 
-		-o-animation:      tvflicker .5s infinite alternate; 
-		animation:         tvflicker .5s infinite alternate; 
-	}
-
-	@-webkit-keyframes tvflicker {
-	  0%   { box-shadow: 0 0 100px 0 rgba(200,235,255,0.4); }
-	  100% { box-shadow: 0 0 95px 0 rgba(200,230,255,0.45); }
-	}
-	@-moz-keyframes tvflicker {
-	  0%   { box-shadow: 0 0 100px 0 rgba(225,235,255,0.4); }
-	  100% { box-shadow: 0 0 60px 0 rgba(200,220,255,0.6); }
-	}
-	@-o-keyframes tvflicker {
-	  0%   { box-shadow: 0 0 100px 0 rgba(225,235,255,0.4); }
-	  100% { box-shadow: 0 0 60px 0 rgba(200,220,255,0.6); }
-	}
-	@keyframes tvflicker {
-	  0%   { box-shadow: 0 0 100px 0 rgba(225,235,255,0.4); }
-	  100% { box-shadow: 0 0 60px 0 rgba(200,220,255,0.6); }
-	}
+@-webkit-keyframes tvflicker {
+  0%   { box-shadow: 0 0 100px 0 rgba(200,235,255,0.4); }
+  100% { box-shadow: 0 0 95px 0 rgba(200,230,255,0.45); }
+}
+@-moz-keyframes tvflicker {
+  0%   { box-shadow: 0 0 100px 0 rgba(225,235,255,0.4); }
+  100% { box-shadow: 0 0 60px 0 rgba(200,220,255,0.6); }
+}
+@-o-keyframes tvflicker {
+  0%   { box-shadow: 0 0 100px 0 rgba(225,235,255,0.4); }
+  100% { box-shadow: 0 0 60px 0 rgba(200,220,255,0.6); }
+}
+@keyframes tvflicker {
+  0%   { box-shadow: 0 0 100px 0 rgba(225,235,255,0.4); }
+  100% { box-shadow: 0 0 60px 0 rgba(200,220,255,0.6); }
 }
 
 #search-results {
@@ -152,7 +146,7 @@ html, body {
 	height: 200px;
   }
   
-  @keyframes display {
+@keyframes display {
 	0% {
 	  transform: translateX(200px);
 	  opacity: 0;
@@ -173,50 +167,58 @@ html, body {
 	  transform: translateX(-200px);
 	  opacity: 0;
 	}
-  }
+}
   
-  .pic-ctn {
+.pic-ctn {
 	position:absolute;
 	right: 0px; bottom: 10;
 	height: 30px;
 	width: 100px;
-
-  }
+}
   
-  .pic-ctn > img {
+.pic-ctn > img {
 	position: absolute;
 	top: 0;
 	left: calc(0 - 100px);
 	opacity: 0;
 	animation: display 10s infinite;
-  }
+}
   
-  img:nth-child(2) {
-	animation-delay: 2s;
-  }
-  img:nth-child(3) {
-	animation-delay: 4s;
-  }
-  img:nth-child(4) {
-	animation-delay: 6s;
-  }
-  img:nth-child(5) {
-	animation-delay: 8s;
-  }
-  body {background-color : #ededed; font-family : "Open Sans", sans-serif;}
+.pic-ctn img:nth-child(2) {
+animation-delay: 2s;
+}
+.pic-ctn img:nth-child(3) {
+animation-delay: 4s;
+}
+.pic-ctn img:nth-child(4) {
+animation-delay: 6s;
+}
+.pic-ctn img:nth-child(5) {
+animation-delay: 8s;
+}
 
-h1 {padding: 40px; text-align: center; font-size: 1.5em;}
+body {
+  background-color : #ededed; 
+  font-family: "Open Sans", sans-serif;
+}
 
-li a {text-decoration : none; color : #2d2f31;}
+h1 {
+  padding: 40px; 
+  text-align: center; 
+  font-size: 1.5em;
+}
+
+li a {
+  text-decoration : none; 
+  color : #2d2f31;
+}
 
 
 nav {
-  width : 300px; 
   background: #d9d9d9;
-  margin : 40px auto; 
 }
 
-span {
+label[for="touch"] > span:first-child {
   padding : 30px;
   background : #2d2f31; 
   color : white;
@@ -224,9 +226,12 @@ span {
   font-variant : small-caps;
   cursor : pointer;
   display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-span::after {
+label[for="touch"] > span::after {
   float: right;
   right: 10%;
   content: "+";
@@ -245,6 +250,24 @@ span::after {
 
 #touch {position: absolute; opacity: 0; height: 0px;}    
 
-#touch:checked + .slide {height: 300px;} 
+#touch:checked + .slide {
+  height: 350px;
+} 
 
+@media screen and (min-width: 768px) {
+  nav {
+    max-width: 300px;
+    margin: 0 auto;
+    transition: all 100ms;
+  }
+  #monitor {
+    min-width: 800px;
+    max-width: 1000px;
+  }
+}
   
+/* @media screen and (min-width: 1000px) {
+  #monitor {
+    min-width: 850px;
+  }
+} */

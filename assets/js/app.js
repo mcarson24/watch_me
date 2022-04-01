@@ -7,7 +7,8 @@ var titleSpan = document.querySelector("#title");
 let titleInfo
 var favorites = [];
 
-const watchModeKey = '9CXzPOxljYCpAhYv6DZM68hUPQ9ThHrdANojKj9w'
+// const watchModeKey = '9CXzPOxljYCpAhYv6DZM68hUPQ9ThHrdANojKj9w'
+const watchModeKey = 'SBJT7QLtp0gG5jF0WDpFJZ5CoSlBJYwJ5SdRXOeI'
 
 const getTitleInformation = async title => {
   if (!title) return

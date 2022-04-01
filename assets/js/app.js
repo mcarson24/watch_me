@@ -235,14 +235,18 @@ const updateScreen = async () => {
   let hasAtLeastOneStreamer = false
   titleInfo.sources.forEach(source => {
     const formatted_source_name = source.name.toLowerCase().replace(' ', '_')
+    console.log(formatted_source_name, availableServices.includes(formatted_source_name))
     if (availableServices.includes(formatted_source_name)) {
       hasAtLeastOneStreamer = true
       const image = document.querySelector(`#${formatted_source_name}`)
       image.classList.remove('hidden')
       image.setAttribute('href', source.web_url)
+      console.log(image)
     }
   })
-  streamingServices.removeChild(streamingServices.lastElementChild)
+  
+  if (document.querySelector('#message')) streamingServices.removeChild(document.querySelector('#message'))
+
   if (!hasAtLeastOneStreamer) {
     const message = document.createElement('p')    
     message.textContent = `${titleInfo.title} is not currently available on any of the services we support.`

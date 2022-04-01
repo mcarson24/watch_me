@@ -202,7 +202,6 @@ favoritesList.addEventListener("click", function (event) {
     if (element.matches('ul') || element.matches('li')) return
 
     var index = element.parentElement.getAttribute("data-index");
-    console.log(index)
     favorites.splice(index, 1);
     
     saveToFavorites();

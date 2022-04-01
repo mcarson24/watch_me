@@ -225,7 +225,7 @@ const updateScreen = async () => {
   document.querySelector('#title').textContent = titleInfo.title
   document.querySelector('#favorite-btn').classList.remove('hidden')
   const streamingServices = document.querySelector('#streaming_services')
-  const availableServices = ['google_play', 'amazon', 'disney+', 'hulu', 'netflix', 'hbo_max']
+  const availableServices = ['google_play', 'amazon', 'disneyplus', 'hulu', 'netflix', 'hbo_max']
   // Remove previous search's steaming services
   const services = document.getElementsByClassName('service')
   for (const service of services) {
@@ -234,7 +234,7 @@ const updateScreen = async () => {
   }
   let hasAtLeastOneStreamer = false
   titleInfo.sources.forEach(source => {
-    const formatted_source_name = source.name.toLowerCase().replace(' ', '_')
+    const formatted_source_name = source.name.toLowerCase().replace(' ', '_').replace('+', 'plus')
     console.log(formatted_source_name, availableServices.includes(formatted_source_name))
     if (availableServices.includes(formatted_source_name)) {
       hasAtLeastOneStreamer = true
@@ -244,7 +244,7 @@ const updateScreen = async () => {
       console.log(image)
     }
   })
-  
+
   if (document.querySelector('#message')) streamingServices.removeChild(document.querySelector('#message'))
 
   if (!hasAtLeastOneStreamer) {

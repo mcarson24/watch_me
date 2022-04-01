@@ -9,8 +9,8 @@
   <!-- Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
   <script src="https://use.fontawesome.com/a7167bee62.js"></script>
 </head>
-  <body class="bg-neutral-400">
-    <nav class="text-center">
+  <body class="flex flex-col items-center bg-neutral-400">
+    <nav class="text-center w-full">
       <label for="touch">
         <span>
           <h3 id="logo" class="text-white-600 text-center w-full">
@@ -27,88 +27,74 @@
         <li><a href="#">FAQ</a></li>
       </ul>
     </nav>
-    <section class="flex flex-col items-center relative my-4">
-      <form id="search" class="w-5/6 md:w-3/4 mb-4">
-        <input type="text" class="w-full px-2 py-4 rounded" placeholder="Search by Movie or TV Show">
-      </form>
-      <ul id="search-results" class="hidden w-5/6 md:w-3/4 rounded py-2 absolute z-10 bg-white drop-shadow-md">
-      </ul>
-    </section>
-    <div id="container">
-      <div id="monitor">
-        <div id="monitorscreen">
-          <h2 id="title"></h2>
+    <main class="flex flex-col items-center w-full">
+      <section class="flex flex-col justify-center items-center w-full relative my-4">
+        <form id="search" class="w-5/6 md:w-3/4 mb-4">
+          <input type="text" class="w-full px-2 py-4 rounded" placeholder="Search by Movie or TV Show">
+        </form>
+        <ul id="search-results" class="hidden w-5/6 md:w-3/4 rounded py-2 absolute z-10 bg-white drop-shadow-md">
+        </ul>
+      </section>
+      <div id="monitor" class="mx-12">
+        <div id="monitorscreen" class="relative p-2">
+          <h2 id="title" class="text-3xl text-center"></h2>
+          <div class="flex flex-wrap items-center justify-center w-full" id="streaming_services">
+            <a href="https://netflix.com" class="w-1/3 hidden service" id="netflix">
+              <img src="./images/netflix.png" alt="Netflix Logo">
+            </a>
+            <a href="https://play.google.com" class="w-1/3 hidden service" id="google_play">
+              <img src="./images/google_play.png" alt="Google Play Logo">
+            </a>
+            <a href="https://www.amazon.com/Prime-Video/b?node=2676882011" class="w-1/3 hidden service" id="amazon">
+              <img src="./images/amazon.png" alt="Amazon Prime Logo">
+            </a>
+            <a href="https://www.hbomax.com/" class="w-1/3 hidden service" id="hbo_max">
+              <img src="./images/hbo_max.png" alt="HBO-Max Logo">
+            </a>
+            <a href="https://www.disneyplus.com/welcome/stream-now" class="w-1/3 hidden service" id="disney\+">
+              <img src=" ./images/disney+.png" alt="Disney+ Logo">
+            </a>
+            <a href=" https://www.hulu.com/welcome?orig_referrer=https%3A%2F%2Fwww.google.com%2F"
+                class="w-1/3 hidden service"
+                id="hulu">
+              <img src="./images/hulu.png" alt="Hulu">
+            </a>
+          </div>
           <button id="favorite-btn"
-                  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded mr-50"
+                  class="bg-blue-500 h-12 hover:bg-blue-700 hidden text-white font-bold py-2 px-4 border border-blue-700 rounded mr-50"
                   >
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="h-4 w-4" style="fill: #FFF;">
                     <path d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z"/>
                   </svg>
           </button>
-          <div id="listDiv">
-            <h3 id="favoritesHead">Favorites</h3>
-            <ul id="displayFavorites" class="pt-20">
-            </ul>
-          </div>
-          <div class="pic-ctn">
-            <!-- <img src="./images/ef4b93ef8f7157de3f97ae1ff5d21b56_0526bb98-1f4a-4da5-b928-b0025f5e6371_500x749.jpg.webp"
-                alt="" 
-                class="pic"
-                >
-            <img
-                src="./images/1a7b27e981cb1bbf80bac6a99aa06e48_091dd88c-6bcb-48d4-b2ce-b1f0a1de37da_480x.progressive.jpg.webp"
-                alt="" 
-                class="pic"
-                >
-            <img src="./images/Jurassic_World_poster.jpeg" 
-                alt="" 
-                class="pic"
-                >
-            <img src="./images/the-batman-poster-2021-1 Small Small.jpeg" 
-                alt="" 
-                class="pic"
-                >
-            <img src="./images/f8a4910b59f3602bd5953b34d8bc67a7_e4e0bf69-2dbd-46d7-a050-65fb4cb570be_480x.progressive.jpg.webp"
-                alt="" 
-                class="pic"
-                > -->
-          </div>
-          <div class="flex flex-wrap items-center w-1/2 h-max">
-            <a href="https://netflix.com"  class="w-1/3">
-              <img src="./images/netflix.png" alt="Netflix Logo">
-            </a>
-            <a href="https://www.amazon.com/Prime-Video/b?node=2676882011"  class="w-1/3">
-              <img src="./images/amazon-prime-video.png" alt="Amazon=Prime">
-            </a>
-            <a href="https://www.hbomax.com/"  class="w-1/3">
-              <img src="./images/HBO-Max.png" alt="HBO-Max">
-            </a>
-            <a href="https://www.disneyplus.com/welcome/stream-now" class="w-1/3">
-              <img src=" ./images/disney-plus.png" alt="Disney+" >
-            </a>
-            <a href=" https://www.hulu.com/welcome?orig_referrer=https%3A%2F%2Fwww.google.com%2F"  class="w-1/3">
-              <img src="./images/hulu.png" alt="Hulu">
-            </a>
+          <div class="flex flex-col flex-wrap">
+            <h3 id="favoritesHead" class="w-full text-center">Favorites</h3>
+            <div id="listDiv" class="flex flex-wrap justify-center">
+              <ul id="displayFavorites" class="pt-20 flex flex-wrap overflow-scroll">
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <footer class="footer-distributed bg-stone-700 text-center">
-      <div class="inset-x-0 bottom-0">
-        <h3 class="text-white-600">Watch<span1 class="text-blue-400">Me</span1></h3>
+    </main>
+    <footer class="footer-distributed bg-stone-700 text-center text-gray-300">
+      <div class="inset-x-0 bottom-0 flex flex-col items-center">
         <p class="footer-links">
-          <a href="#">Home</a>
-          ·
-          <a href="#">watchMe@email.com</a>
-          .
-          <a href="#">555-555-5555</a>
+          <a href="#" class="text-gray-300">Home</a>
+          |
+          <a href="#" class="text-gray-300">watchMe@email.com</a>
+          |
+          <a href="#" class="text-gray-300">555-555-5555</a>
         </p>
+        <a href="https://github.com/mcarson24/watch_me" class="mb-4">
+          <svg viewBox="0 0 128 128" class="h-12 w-12">
+            <g fill="#d1d5db">
+              <path clip-rule="evenodd" d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"></path>
+              <path d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"></path>
+            </g>
+          </svg>
+        </a>
         <p class="footer-company-name">WatchMe © 2022</p>
-        <div class="icon">
-          <a href="https://github.com/mcarson24/watch_me">
-            <img src="images/github-icon.png" alt="Github Projects Page">
-          </a>
-        </div>
       </div>
     </footer>
     <script src="https://cdn.tailwindcss.com"></script>
